@@ -37,6 +37,8 @@
     {"id":{"name":"Boid_OBJ","path":"objects/Boid_OBJ/Boid_OBJ.yy",},},
     {"id":{"name":"Wall_OBJ","path":"objects/Wall_OBJ/Wall_OBJ.yy",},},
     {"id":{"name":"Room1","path":"rooms/Room1/Room1.yy",},},
+    {"id":{"name":"instance_nth_nearest","path":"scripts/instance_nth_nearest/instance_nth_nearest.yy",},},
+    {"id":{"name":"print","path":"scripts/print/print.yy",},},
     {"id":{"name":"Boid_SPR","path":"sprites/Boid_SPR/Boid_SPR.yy",},},
     {"id":{"name":"Wall_SPR","path":"sprites/Wall_SPR/Wall_SPR.yy",},},
   ],
