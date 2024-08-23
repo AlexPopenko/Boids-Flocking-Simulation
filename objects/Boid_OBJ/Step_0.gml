@@ -4,7 +4,7 @@
 //In practice, the turn angle they move at a time to turn?
 var CoherenceDirection = 1.5;
 var CoherenceSpeed = .2;
-var Closeness = 20;
+var Closeness = 100;
 var SpeedChange = .1;
 
 
@@ -33,10 +33,11 @@ var DirectionToWall = point_direction(id.x, id.y, WX, WY);
 	image_angle = direction;
 }
 else {
+	//Tries to maintain distance by switching to slowing down when too close. And speed up when far
 if distance_to_object(NearestBoid) > Closeness
 {CoherenceDirection = abs(CoherenceDirection);
 	CoherenceSpeed = abs(CoherenceSpeed);}
-	else{
+	else if distance_to_object(NearestBoid) < (Closeness-40){
 	CoherenceDirection = -1*abs(CoherenceDirection);
 	CoherenceSpeed = -1*abs(CoherenceSpeed);
 	}
