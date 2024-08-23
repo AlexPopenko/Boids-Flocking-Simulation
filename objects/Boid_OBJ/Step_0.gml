@@ -7,6 +7,8 @@ var CoherenceSpeed = .2;
 var Closeness = 20;
 var SpeedChange = .1;
 
+
+
 move_wrap(true, true, 0)
 
 
@@ -15,6 +17,22 @@ move_wrap(true, true, 0)
 
 var NearestBoid = instance_nth_nearest(x,y,Boid_OBJ,2);
 
+if distance_to_object(Wall_OBJ) < 200
+{
+var WX = instance_nearest(x, y, Wall_OBJ).x;
+var WY = instance_nearest(x, y, Wall_OBJ).y;
+var DirectionToWall = point_direction(id.x, id.y, WX, WY);
+
+
+	if id.direction-DirectionToWall < 130 && id.direction-DirectionToWall > 0
+	{id.direction = id.direction + 6}
+	else if DirectionToWall-id.direction < 130 && DirectionToWall-id.direction > 0
+	{id.direction = id.direction - 6}
+	else if id.direction-DirectionToWall > 230
+	{id.direction = id.direction - 6}
+	image_angle = direction;
+}
+else {
 if distance_to_object(NearestBoid) > Closeness
 {CoherenceDirection = abs(CoherenceDirection);
 	CoherenceSpeed = abs(CoherenceSpeed);}
@@ -50,7 +68,7 @@ if id.speed < LowerSpeedThresh
 {id.speed = id.speed + SpeedChange}
 else if id.speed > UpperSpeedThresh
 {id.speed = id.speed - SpeedChange}
-
+}
 
 /*
 print("Boid:")
